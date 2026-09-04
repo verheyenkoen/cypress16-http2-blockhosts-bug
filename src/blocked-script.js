@@ -1,0 +1,1 @@
+document.getElementById("change-me").innerHTML = "❌ <code>blockHosts</code> failed!";
