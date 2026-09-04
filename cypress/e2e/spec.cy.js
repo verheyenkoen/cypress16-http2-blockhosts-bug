@@ -1,6 +1,8 @@
 /// <reference types="cypress" />
-describe('page', () => {
-  it('works', () => {
-    cy.visit('https://example.cypress.io')
-  })
-})
+describe("The blockHosts config in HTTP/2 mode", () => {
+  it("should block the specified hosts", () => {
+    cy.visit("/");
+
+    cy.get("#change-me").should("contain.text", "works");
+  });
+});

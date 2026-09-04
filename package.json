@@ -15,9 +15,13 @@
   "author": "Cypress-io",
   "license": "ISC",
   "devDependencies": {
+    "cypress": "^16.0.0"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/cypress-io/cypress-test-tiny.git"
+  },
+  "allowScripts": {
+    "cypress@16.0.0": true
   }
 }
