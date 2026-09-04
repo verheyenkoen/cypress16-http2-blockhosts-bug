@@ -7,7 +7,15 @@
 </head>
 <body>
     <h1>Cypress 16 + http2 + blockHosts bug</h1>
-    <div id="change-me">✅ <code>blockHosts</code> works!</div>
+    <p id="change-me">✅ <code>blockHosts</code> works!</p>
+    <p id="protocol">Protocol: <mark><code>detecting...</code></mark></p>
+    <script>
+      // Protocol negotiated on the browser -> (Cypress proxy ->) server hop.
+      // "h2"/"h3" = HTTP/2+, "http/1.1" = HTTP/1.1 (e.g. Cypress forceHttp1).
+      var nav = performance.getEntriesByType("navigation")[0];
+      document.querySelector("#protocol code").textContent =
+        (nav && nav.nextHopProtocol) || "unknown";
+    </script>
     <script src="https://cypress16-http2-blockhosts-b-git-f6c15d-koen-verheyens-projects.vercel.app/blocked-script.js"></script>
 </body>
 </html>
